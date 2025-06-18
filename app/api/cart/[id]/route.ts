@@ -4,8 +4,8 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+  { params }: { params: Promise<{ id: string }> }
+): Promise<NextResponse> {
   try {
     const { id } = await params;
     const numericId = Number(id);
@@ -37,7 +37,7 @@ export async function PATCH(
 
     const updatedUserCart = await updateCartTotalAmount(token);
 
-    return NextResponse.json( updatedUserCart );
+    return NextResponse.json(updatedUserCart);
   } catch (error) {
     console.log('[CART PATCH] Server Error', error);
     return NextResponse.json(
@@ -49,8 +49,8 @@ export async function PATCH(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+  { params }: { params: Promise<{ id: string }> }
+): Promise<NextResponse> {
   try {
     const { id } = await params;
     const numericId = Number(id);
@@ -74,12 +74,11 @@ export async function DELETE(
       where: {
         id: numericId,
       },
-    })
-    
+    });
+
     const updatedUserCart = await updateCartTotalAmount(token);
 
     return NextResponse.json(updatedUserCart);
-
   } catch (error) {
     console.log('[CART DELETE] Server Error', error);
     return NextResponse.json(

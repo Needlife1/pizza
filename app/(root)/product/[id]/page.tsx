@@ -5,11 +5,7 @@ import {
 import { prisma } from '@/prisma/prismaClient';
 import { notFound } from 'next/navigation';
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const product = await prisma.product.findFirst({
     where: { id: Number(id) },
@@ -32,7 +28,6 @@ export default async function ProductPage({
 
   if (!product) return notFound();
 
-  
   return (
     <Container className="flex flex-col my-10">
       <ProductForm product={product} />

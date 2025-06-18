@@ -4,7 +4,7 @@ import { CheckoutFormValues } from '@/shared/components/shared/checkout/schemas/
 import { prisma } from '@/prisma/prismaClient';
 import { OrderStatus, Prisma } from '@prisma/client';
 import { cookies } from 'next/headers';
-import { createPayment, refundPayment, sendEmail } from '@/shared/lib';
+import { createPayment, sendEmail } from '@/shared/lib';
 import { PayOrderTemplate } from '@/shared/components/shared';
 import { DELIVERY_PRICE } from '@/shared/constants/pizza';
 import { getUserSession } from '@/shared/lib/getUserSassion';

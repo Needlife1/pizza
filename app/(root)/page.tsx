@@ -9,9 +9,13 @@ import {
 import { Suspense } from 'react';
 import { GetSearchParams, findPizzas } from '@/shared/lib/findPizzas';
 
-export default async function Home({ searchParams, }: { searchParams: GetSearchParams }) {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<GetSearchParams>;
+}) {
   const resolvedParams = await searchParams;
-  
+
   const categories = await findPizzas(resolvedParams);
 
   return (
