@@ -12,7 +12,7 @@ export const categories = [
     name: 'Коктейлі',
   },
   {
-    name: 'Напої',
+    name: 'Кава',
   },
 ];
 
@@ -127,128 +127,90 @@ export const _ingredients = [
   },
 ].map((obj, i) => ({ id: i + 1, ...obj }));
 
-// export const products = [
-//   {
-//     name: 'Пепперони фреш',
-//     imageUrl:
-//       'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
-//     categoryId: 2,
-//   },
-//   {
-//     name: 'Сырная',
-//     imageUrl:
-//       'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
-//     categoryId: 3,
-//   },
-//   {
-//     name: 'Чоризо фреш',
-//     imageUrl:
-//       'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
-//     categoryId: 4,
-//   },
-// ];
-
 export const products = [
   {
-    name: 'Омлет з шинкою та грибами',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7970321044479C1D1085457A36EB.webp',
+    name: 'Омлет з пепероні в пирозі',
+    imageUrl: '/assets/images/breakfasts/pepperoni-omelet.webp',
     categoryId: 2,
   },
   {
-    name: 'Омлет з пепероні',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE94ECF33B0C46BA410DEC1B1DD6F8.webp',
+    name: 'Омлет із беконом',
+    imageUrl: '/assets/images/breakfasts/bacon-omelette.webp',
     categoryId: 2,
   },
   {
-    name: 'Кава Лате',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D61B0C26A3F85D97A78FEEE00AD.webp',
+    name: 'Сирники зі згущеним молоком',
+    imageUrl: '/assets/images/breakfasts/cheesecakes-condensed-milk.webp',
+    categoryId: 2,
+  },
+  {
+    name: 'Сирники з малиновим варенням',
+    imageUrl: '/assets/images/breakfasts/cheesecakes-raspberry-jam.webp',
     categoryId: 2,
   },
   {
     name: 'Сенвіч шинка та сир',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.webp',
+    imageUrl: '/assets/images/snacks/ham-cheese-sandwich.webp',
     categoryId: 3,
   },
   {
     name: 'Курячі нагетси',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D618B5C7EC29350069AE9532C6E.webp',
+    imageUrl: '/assets/images/snacks/chicken-nuggets.webp',
     categoryId: 3,
   },
   {
     name: 'Картопля з печі з соусом Цезар',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EED646A9CD324C962C6BEA78124F19.webp',
+    imageUrl: '/assets/images/snacks/potatoes-sauce.webp',
     categoryId: 3,
   },
   {
     name: 'Додстер',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE796F96D11392A2F6DD73599921B9.webp',
+    imageUrl: '/assets/images/snacks/dodster.webp',
     categoryId: 3,
   },
   {
     name: 'Гострий Додстер',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE796FD3B594068F7A752DF8161D04.webp',
+    imageUrl: '/assets/images/snacks/spicy-dodster.webp',
     categoryId: 3,
   },
   {
-    name: 'Банановий молочний коктейль',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EEE20B8772A72A9B60CFB20012C185.webp',
+    name: 'Персиковий молочний коктейль',
+    imageUrl: '/assets/images/milkshake/peach-milkshake.webp',
     categoryId: 4,
   },
   {
-    name: 'Карамельне яблуко молочний коктейль',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE79702E2A22E693D96133906FB1B8.webp',
+    name: 'Молочний коктейль Фісташка',
+    imageUrl: '/assets/images/milkshake/milkshake-pistachio.webp',
     categoryId: 4,
   },
   {
     name: 'Молочний коктейль з печивом Орео',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE796FA1F50F8F8111A399E4C1A1E3.webp',
+    imageUrl: '/assets/images/milkshake/oreo-cookie-milkshake.webp',
     categoryId: 4,
   },
   {
     name: 'Класичний молочний коктейль',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE796F93FB126693F96CB1D3E403FB.webp',
+    imageUrl: '/assets/images/milkshake/milkshake.webp',
     categoryId: 4,
   },
   {
-    name: 'Ірландський капучино',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D61999EBDA59C10E216430A6093.webp',
+    name: 'Кава Кокосова латте',
+    imageUrl: '/assets/images/сoffee/Coffee-Coconut-Latte.webp',
     categoryId: 5,
   },
   {
-    name: 'Карамельний капучино',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D61AED6B6D4BFDAD4E58D76CF56.webp',
+    name: 'Кава Горіховий латте',
+    imageUrl: '/assets/images/сoffee/Coffee-Nut-Latte.webp',
     categoryId: 5,
   },
   {
-    name: 'Кокосовий лате',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D61B19FA07090EE88B0ED347F42.webp',
+    name: 'Кава Капучіно',
+    imageUrl: '/assets/images/сoffee/Coffee-Cappuccino.webp',
     categoryId: 5,
   },
   {
-    name: 'Кава Американо',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D61B044583596548A59078BBD33.webp',
-    categoryId: 5,
-  },
-  {
-    name: 'Кава Лате',
-    imageUrl:
-      'https://media.dodostatic.net/image/r:292x292/11EE7D61B0C26A3F85D97A78FEEE00AD.webp',
+    name: 'Кава Латте',
+    imageUrl: '/assets/images/сoffee/coffee-latte.webp',
     categoryId: 5,
   },
 ];
