@@ -154,28 +154,28 @@ async function up() {
   await prisma.story.createMany({
     data: [
       {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496',
+        id: 1,
+        previewImageUrl: '/assets/images/stories/story1.webp',
       },
       {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640',
+        id: 2,
+        previewImageUrl: '/assets/images/stories/story2.webp',
       },
       {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020',
+        id: 3,
+        previewImageUrl: '/assets/images/stories/story3.webp',
       },
       {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958',
+        id: 4,
+        previewImageUrl: '/assets/images/stories/story4.webp',
       },
       {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737',
+        id: 5,
+        previewImageUrl: '/assets/images/stories/story5.webp',
       },
       {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284',
+        id: 6,
+        previewImageUrl: '/assets/images/stories/story6.webp',
       },
     ],
   });
@@ -184,31 +184,39 @@ async function up() {
     data: [
       {
         storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
+        sourceUrl: '/assets/images/stories/stories-item/story1_1.webp',
       },
       {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
+        storyId: 2,
+        sourceUrl: '/assets/images/stories/stories-item/story2_1.webp',
       },
       {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
+        storyId: 3,
+        sourceUrl: '/assets/images/stories/stories-item/story3_1.webp',
       },
       {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
+        storyId: 3,
+        sourceUrl: '/assets/images/stories/stories-item/story3_2.webp',
       },
       {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
+        storyId: 3,
+        sourceUrl: '/assets/images/stories/stories-item/story3_3.webp',
+      },
+      {
+        storyId: 4,
+        sourceUrl: '/assets/images/stories/stories-item/story4_1.webp',
+      },
+      {
+        storyId: 5,
+        sourceUrl: '/assets/images/stories/stories-item/story5_1.webp',
+      },
+      {
+        storyId: 6,
+        sourceUrl: '/assets/images/stories/stories-item/story6_1.webp',
       },
     ],
   });
+
 
 }
 
