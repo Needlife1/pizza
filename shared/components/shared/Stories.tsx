@@ -7,6 +7,7 @@ import { Container } from './Container';
 import { cn } from '@/shared/lib/utils';
 import { X } from 'lucide-react';
 import ReactStories from 'react-insta-stories';
+import { Slider } from './Slider';
 
 interface Props {
   className?: string;
@@ -61,7 +62,11 @@ export const Stories: React.FC<Props> = ({ className }) => {
             />
           ))}
 
-        {stories.map((story) => (
+        <Slider
+          stories={stories}
+          onStoryClick={onClickStory}
+        />
+        {/* {stories.map((story) => (
           <img
             key={story.id}
             onClick={() => onClickStory(story)}
@@ -70,7 +75,7 @@ export const Stories: React.FC<Props> = ({ className }) => {
             width={200}
             src={story.previewImageUrl}
           />
-        ))}
+        ))} */}
 
         {open && (
           <div className="absolute left-0 top-0 w-full h-full bg-black/80 flex items-center justify-center z-30">

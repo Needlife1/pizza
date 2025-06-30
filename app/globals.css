@@ -2,6 +2,10 @@
 
 @plugin "tailwindcss-animate";
 
+@import 'swiper/css';
+@import 'swiper/css/navigation'; 
+@import 'swiper/css/pagination';
+
 html{
   scroll-behavior: smooth;
 }
@@ -149,5 +153,24 @@ html{
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+/* ============== */
+
+.my-pagination .swiper-pagination-bullet {
+  @apply bg-orange-300 opacity-60;
+}
+
+.my-pagination .swiper-pagination-bullet-active {
+  @apply bg-orange-600 opacity-100;
+}
+
+@layer components {
+ 
+  .my-pagination .swiper-pagination-bullet {
+    @apply bg-orange-300 opacity-60;
+  }
+  .my-pagination .swiper-pagination-bullet-active {
+    @apply bg-orange-600 opacity-100;
   }
 }

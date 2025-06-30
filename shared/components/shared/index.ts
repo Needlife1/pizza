@@ -34,6 +34,7 @@ export { ProfileButton } from './ProfileButton';
 export { InfoBlock } from './InfoBlock';
 export { ProfileForm } from './ProfileForm';
 export { Stories } from './Stories';
+export { Slider } from './Slider';
 export * from './modals';
 export * from './form';
 export * from './emailTemplate';
