@@ -9,9 +9,14 @@ export const VerificationUserTemplate: React.FC<Props> = ({ code }) => (
     <p>
       Код підтвердження <h1>{code}</h1>
     </p>
-{/*вставить адрес хостингу */}
+    {/*вставить адрес хостингу */}
     <p>
-      <a href={`http://localhost:3000/api/auth/verify?code=${code}`}> Підтвердити реєстрацію</a>
+      <a
+        href={`https://pizza-tawny-phi.vercel.app/api/auth/verify?code=${code}`}
+      >
+        {' '}
+        Підтвердити реєстрацію
+      </a>
     </p>
   </div>
 );

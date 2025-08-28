@@ -177,7 +177,12 @@ async function up() {
         id: 6,
         previewImageUrl: '/assets/images/stories/story6.webp',
       },
+      {
+        id: 7,
+        previewImageUrl: '/assets/images/stories/story4.webp',
+      },
     ],
+    
   });
 
   await prisma.storyItem.createMany({

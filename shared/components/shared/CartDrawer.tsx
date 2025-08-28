@@ -41,7 +41,7 @@ const {
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
 
-      <SheetContent className="flex flex-col justify-between pb-0 bg-[#F4F1EE]">
+      <SheetContent className="flex flex-col justify-between pb-0 bg-[#F4F1EE] rounded-l-2xl">
         {totalAmount > 0 && (
           <SheetHeader>
             <SheetTitle>
@@ -116,8 +116,8 @@ const {
 
                 <Link href="/checkout">
                   <Button
-                      onClick={() => setRedirecting(true)}
-                      loading={redirecting}
+                    onClick={() => setRedirecting(true)}
+                    loading={redirecting}
                     type="submit"
                     className="w-full h-12 text-base"
                   >

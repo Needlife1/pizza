@@ -1,6 +1,6 @@
 import {
   Container,
-  Title,
+  // Title,
   TopBar,
   Filter,
   ProductsGroupList,
@@ -20,10 +20,11 @@ export default async function Home({
 
   return (
     <>
-      <Container className="mt-10">
-        <Title text="Все пиццы" size="lg" className="font-extrabold" />
-      </Container>
+      {/* <Container className="mt-10">
+        <Title text="Усі страви" size="lg" className="font-extrabold" />
+      </Container> */}
       <TopBar
+        className="hidden sm:block"
         categories={categories.filter(
           (category) => category.products.length > 0
         )}
@@ -34,7 +35,7 @@ export default async function Home({
       <Container className=" mt-10 pb-14">
         <div className="flex gap-18">
           {/* фильтрация */}
-          <div className="w-[250px]">
+          <div className="w-[250px] hidden sm:block">
             <Suspense>
               <Filter />
             </Suspense>

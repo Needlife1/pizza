@@ -17,7 +17,7 @@ export const ProfileButton: React.FC<Props> = ({ onClickSignIn, className }) => 
         <Button
           onClick={onClickSignIn}
           variant="outline"
-          className="flex items-center gap-1"
+          className="flex items-center gap-1 w-full"
         >
           <User size={16} />
           Увійти

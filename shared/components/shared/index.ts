@@ -1,5 +1,4 @@
-import { Check } from 'lucide-react';
-import { SearchInput } from './SearchInput';
+export { MobileMenu } from './MobileMenu';
 export { Container } from './Container';
 export { Header } from './Header';
 export { Title } from './Title';

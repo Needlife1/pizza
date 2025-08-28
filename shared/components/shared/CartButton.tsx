@@ -17,12 +17,28 @@ export const CartButton: React.FC<Props> = ({ className }) => {
 
   return (
     <CartDrawer>
-      <Button loading={loading} className={cn('group relative', {'w-26': loading}, className)}>
-        <b>{totalAmount} грн</b>
-        <span className="h-full w-[1px] bg-white/30 mx-3"></span>
+      <Button
+        loading={loading}
+        className={cn(
+          'group relative',
+          { 'w-26': loading },
+          'h-10 px-3 text-sm sm:h-11 sm:px-4 sm:text-base gap-2 sm:gap-3 disabled:cursor-wait',
+          className
+        )}
+      >
+        <b className="hidden sm:inline">{totalAmount} грн</b>
+        <span className="hidden sm:inline h-full w-[1px] bg-white/30 mx-3"></span>
+
         <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">
           <ShoppingCart size={16} strokeWidth={2} />
-          <b>{items.length}</b>
+          <b
+            className={cn(
+              'ml-1 inline-flex items-center justify-center font-bold',
+              'min-w-[20px] h-5 rounded-md bg-white/15 px-1 text-[11px] sm:bg-transparent sm:text-base sm:min-w-0 sm:h-auto sm:px-0'
+            )}
+          >
+            {items.length}
+          </b>
         </div>
         <ArrowRight
           size={20}

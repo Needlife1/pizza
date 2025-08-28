@@ -3,7 +3,6 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { formLoginSchema, TFormLoginValues } from './schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Title } from '../../../Title';
 import { FormInput } from '../../../form';
 import { Button } from '@/shared/components/ui';
 import toast from 'react-hot-toast';
@@ -56,7 +55,6 @@ export const LoginForm: React.FC<Props> = ({onClose}) => {
             <DialogTitle className="text-[26px] font-bold">
               {'Вхід у акаунт'}
             </DialogTitle>
-            {/* <Title text="Вхід у акаунт" size="md" className="font-bold" /> */}
             <p className="text-gray-400">
               Введіть електронну пошту, щоб увійти до свого акаунта.
             </p>
