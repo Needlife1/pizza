@@ -4,7 +4,6 @@ import { cn } from '@/shared/lib/utils';
 import React from 'react';
 
 import Image from 'next/image';
-import { Container } from './Container';
 import Link from 'next/link';
 import { SearchInput } from './SearchInput';
 import { CartButton } from './CartButton';
@@ -17,6 +16,7 @@ import { Button } from '../ui';
 import { Menu } from 'lucide-react';
 import { categories } from '@/shared/constants/navCategories';
 import { MobileMenu } from './MobileMenu';
+import { Container } from './Container';
 
 interface Props {
   hasCart?: boolean;
