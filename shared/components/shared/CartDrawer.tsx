@@ -103,15 +103,22 @@ const {
               ))}
             </div>
 
-            <SheetFooter className="bg-white p-8">
+            <SheetFooter
+              className="sticky bottom-0 left-0 right-0 bg-white/95 backdrop-blur
+               supports-[backdrop-filter]:bg-white/70 border-t
+               px-3 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6
+               pb-[max(1rem,env(safe-area-inset-bottom))]"
+            >
               <div className="w-full">
-                <div className="flex mb-4">
-                  <span className="flex flex-1 text-lg text-neutral-500">
+                <div className="flex items-baseline mb-3 sm:mb-4">
+                  <span className="flex items-center flex-1 text-base sm:text-lg text-neutral-500">
                     Итого
                     <div className="flex-1 border-b border-dashed border-b-neutral-200 relative -top-1 mx-2" />
                   </span>
 
-                  <span className="font-bold text-lg">{totalAmount} гнр</span>
+                  <span className="font-bold tabular-nums text-base sm:text-xl md:text-2xl">
+                    {totalAmount} гнр
+                  </span>
                 </div>
 
                 <Link href="/checkout">
@@ -119,7 +126,7 @@ const {
                     onClick={() => setRedirecting(true)}
                     loading={redirecting}
                     type="submit"
-                    className="w-full h-12 text-base"
+                    className="w-full h-12 sm:h-12 md:h-14 text-sm sm:text-base md:text-lg rounded-xl"
                   >
                     Оформити замовлення
                     <ArrowRight className="w-5 ml-2" />

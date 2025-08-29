@@ -1,5 +1,6 @@
 import React from 'react';
 import { Checkbox } from '../ui/checkbox';
+import { cn } from '@/shared/lib/utils';
 
 export interface FilterChecboxProps {
   text: string;
@@ -16,24 +17,32 @@ export const FilterCheckbox: React.FC<FilterChecboxProps> = ({
   endAdornment,
   onCheckedChange,
   checked,
-  name
+  name,
 }) => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
       <Checkbox
         onCheckedChange={onCheckedChange}
         checked={checked}
         value={value}
-        className="rounded-[8px] w-6 h-6"
         id={`checkbox-${String(name)}-${String(value)}`}
+        className={cn(
+          'rounded-[6px]',
+          'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'
+        )}
       />
       <label
         htmlFor={`checkbox-${String(name)}-${String(value)}`}
-        className="leading-none cursor-pointer flex-1"
+        className={cn(
+          'leading-none cursor-pointer flex-1',
+          'text-xs sm:text-sm md:text-base'
+        )}
       >
         {text}
       </label>
-      {endAdornment}
+      {endAdornment && (
+        <div className="text-xs sm:text-sm md:text-base">{endAdornment}</div>
+      )}
     </div>
   );
 };

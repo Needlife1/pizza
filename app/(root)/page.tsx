@@ -33,9 +33,9 @@ export default async function Home({
       <Stories />
 
       <Container className=" mt-10 pb-14">
-        <div className="flex gap-18">
+        <div className="md:flex gap-18">
           {/* фильтрация */}
-          <div className="w-[250px] hidden sm:block">
+          <div className="w-full md:w-[200px] xl:w-[250px] block">
             <Suspense>
               <Filter />
             </Suspense>

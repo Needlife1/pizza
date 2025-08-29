@@ -67,15 +67,6 @@ export const authOptions: NextAuthOptions = {
 
         if (!user.email) return false;
 
-        // const findUser = await prisma.user.findFirst({
-        //   where: {
-        //     OR: [
-        //       { provider: account?.provider, providerId: account?.provider },
-        //       { email: user.email },
-        //     ],
-        //   },
-        // });
-
         const findUser = await prisma.user.findFirst({
           where: {
             OR: [

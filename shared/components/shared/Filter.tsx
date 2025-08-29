@@ -33,51 +33,66 @@ export const Filter: React.FC<Prop> = ({ className }) => {
 
   return (
     <div className={className}>
-      <Title text="Фильтрация" size="sm" className="mb-5 font-bold" />
+      <Title text="Фільтр" size="sm" className="mb-5 font-bold" />
 
-      <CheckboxFiltersGroup
-        title="Тип теста"
-        name="pizzaTypes"
-        className="mb-5"
-        onClickCheckbox={filters.setPizzaTypes}
-        selected={filters.pizzaTypes}
-        items={[
-          {
-            text: 'Тонкое',
-            value: '1',
-          },
-          {
-            text: 'Традиционное',
-            value: '2',
-          },
-        ]}
-      />
+      <div className="flex flex-wrap w-full justify-around items-center md:justify-normal">
+        <div>
+          <CheckboxFiltersGroup
+            title="Тип тіста"
+            name="pizzaTypes"
+            className="mb-5"
+            onClickCheckbox={filters.setPizzaTypes}
+            selected={filters.pizzaTypes}
+            items={[
+              {
+                text: 'Тонке',
+                value: '1',
+              },
+              {
+                text: 'Традиційне',
+                value: '2',
+              },
+            ]}
+          />
 
-      <CheckboxFiltersGroup
-        title="Pазмеры"
-        name="sizes"
-        className="mb-5"
-        onClickCheckbox={filters.setSizes}
-        selected={filters.sizes}
-        items={[
-          {
-            text: '20см',
-            value: '20',
-          },
-          {
-            text: '30см',
-            value: '30',
-          },
-          {
-            text: '40см',
-            value: '40',
-          },
-        ]}
-      />
+          <CheckboxFiltersGroup
+            title="Розміри"
+            name="sizes"
+            className="mb-5"
+            onClickCheckbox={filters.setSizes}
+            selected={filters.sizes}
+            items={[
+              {
+                text: '20см',
+                value: '20',
+              },
+              {
+                text: '30см',
+                value: '30',
+              },
+              {
+                text: '40см',
+                value: '40',
+              },
+            ]}
+          />
+        </div>
 
-      <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
-        <p className="font-bold mb-3">Цена от и до:</p>
-        <div className="flex gap-3 mb-5">
+        <CheckboxFiltersGroup
+          name="ingredients"
+          title="Інгредієнти"
+          className="mt-5"
+          limit={6}
+          defaultItems={items.slice(0, 6)}
+          items={items}
+          loading={loading}
+          onClickCheckbox={filters.setSelectedIngredients}
+          selected={filters.selectedIngredients}
+        />
+      </div>
+      <div className="w-full mt-5 border-y border-y-neutral-100 py-6 px-10 md:px-0 pb-7">
+        <p className="font-bold mb-3">Ціна від і до:</p>
+        <div className="flex gap-3 mb-5 ">
           <Input
             type="number"
             placeholder="0"
@@ -110,18 +125,6 @@ export const Filter: React.FC<Prop> = ({ className }) => {
           onValueChange={updatePrices}
         />
       </div>
-
-      <CheckboxFiltersGroup
-        name="ingredients"
-        title="Ингридиент"
-        className="mt-5"
-        limit={6}
-        defaultItems={items.slice(0, 6)}
-        items={items}
-        loading={loading}
-        onClickCheckbox={filters.setSelectedIngredients}
-        selected={filters.selectedIngredients}
-      />
     </div>
   );
 };

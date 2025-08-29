@@ -42,12 +42,14 @@ export const CartDrawerItem: React.FC<Props> = ({
         <CartItemInfo name={name} details={details} />
 
         <hr className="my-3" />
-
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row items-center justify-between">
           <CountButton onMinus={onMinus} onPlus={onPlus} value={quantity} />
 
           <div className="flex items-center gap-2">
-            <CartItemDetailsPrice value={price} />
+            <CartItemDetailsPrice
+              value={price}
+              className="tabular-nums whitespace-nowrap text-base sm:text-lg md:text-xl"
+            />
             <Trash2Icon
               onClick={onDelete}
               className="text-gray-400 cursor-pointer hover:text-gray-600"
