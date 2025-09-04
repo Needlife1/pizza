@@ -13,15 +13,17 @@ export default function CheckoutLayout({
   children: React.ReactNode;
 }) {
     return (
-      <main className="min-h-screen bg-[#F4F1EE]">
-        <Container>
+      <main className="bg-[#F4F1EE]">
+        <Container className="max-w-full">
           <Suspense fallback={<div>Завантаження…</div>}>
             <Header
               hasCart={false}
               hasSearch={false}
               className="border-b-gray-200"
             />
-            {children}
+            <div className="px-4 sm:px-6 lg:px-8 xl:px-10 py-25 sm:py-8 lg:py-10">
+              {children}
+            </div>
           </Suspense>
         </Container>
       </main>

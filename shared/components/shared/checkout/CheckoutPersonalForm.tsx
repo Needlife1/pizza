@@ -7,16 +7,37 @@ interface Props {
 }
 
 export const CheckoutPersonalForm: React.FC<Props> = ({ className }) => {
-
-  
- 
   return (
     <WhiteBlock title="2. Персональні дані" className={className}>
-      <div className="grid grid-cols-2 gap-5">
-        <FormInput name="firstName" className="text-base" placeholder="Імя" />
-        <FormInput name="lastName" className="text-base" placeholder="Прізвище" />
-        <FormInput name="email" className="text-base" placeholder="E-mail" />
-        <FormInput name="phone" className="text-base" placeholder="Телефон" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-9 pb-8">
+        <FormInput
+          name="firstName"
+          placeholder="Імʼя"
+          className="h-11 sm:h-12 text-sm sm:text-base"
+          autoComplete="given-name"
+        />
+        <FormInput
+          name="lastName"
+          placeholder="Прізвище"
+          className="h-11 sm:h-12 text-sm sm:text-base"
+          autoComplete="family-name"
+        />
+        <FormInput
+          name="email"
+          type="email"
+          placeholder="E-mail"
+          className="h-11 sm:h-12 text-sm sm:text-base"
+          autoComplete="email"
+          inputMode="email"
+        />
+        <FormInput
+          name="phone"
+          type="tel"
+          placeholder="Телефон"
+          className="h-11 sm:h-12 text-sm sm:text-base"
+          autoComplete="tel"
+          inputMode="tel"
+        />
       </div>
     </WhiteBlock>
   );

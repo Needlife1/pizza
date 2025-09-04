@@ -94,8 +94,8 @@ export default function CheckoutPage() {
 
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="flex gap-10">
-            <div className="flex flex-col gap-10 flex-1 mb-20">
+          <div className="lg:flex gap-10">
+            <div className="flex flex-col gap-5 md:gap-10 flex-1 mb-5 md:mb-20">
               <CheckoutCart
                 onClickCountButton={onClickCountButton}
                 removeCartItem={removeCartItem}
@@ -112,7 +112,7 @@ export default function CheckoutPage() {
               />
             </div>
 
-            <div className="w-[450px]">
+            <div className="lg:w-[450px]">
               <CheckoutSidebar
                 totalAmount={totalAmount}
                 loading={loading || submitting}

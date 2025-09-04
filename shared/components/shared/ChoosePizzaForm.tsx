@@ -22,10 +22,6 @@ interface Props {
   onSubmit: (itemId: number, ingredients: number[]) => void;
 }
 
-/**
- * Форма для выбора пиццы
- */
-
 export const ChoosePizzaForm: React.FC<Props> = ({
   imageUrl,
   name,
@@ -61,11 +57,10 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   };
 
   return (
-    <div className={cn(className, 'flex flex-1')}>
+    <div className={cn(className, 'flex flex-col md:flex-row flex-1')}>
       <PizzaImage imageUrl={imageUrl} size={size} />
 
-      <div className="w-[490px] bg-gray-100 p-7">
-        {/* Поставить кастомный заголовок */}
+      <div className="w-full md:w-[490px] bg-gray-100 p-5 sm:p-6 md:p-7">
         {isModal ? (
           <DialogTitle className="text-2xl font-bold mb-1">{name}</DialogTitle>
         ) : (
@@ -89,7 +84,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
         </div>
 
         <div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar mt-5">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-3 place-items-center">
             {ingredients.map((ingredient) => (
               <IngredientItem
                 key={ingredient.id}

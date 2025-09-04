@@ -26,27 +26,77 @@ export const CheckoutItem: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <div className={cn('flex items-center justify-between',
-      {
-        'opacity-50 pointer-events-none': disabled,
-      },
-      className)}>
-      <div className="flex items-center gap-5 flex-1">
-        <CartItemDetailsImage src={imageUrl} />
-        <CartItemInfo name={name} details={details} />
+    <div
+      className={cn(
+        'w-full rounded-xl border border-gray-100 bg-white',
+        'p-3 sm:p-4 md:p-5',
+        'flex flex-col gap-3',
+        'sm:flex-row sm:items-center sm:gap-4',
+        'md:justify-between',
+        { 'opacity-50 pointer-events-none': disabled },
+        className
+      )}
+    >
+      <div
+        className={cn(
+          'flex items-start gap-3',
+          'sm:items-center sm:gap-4',
+          'sm:flex-1'
+        )}
+      >
+        <CartItemDetailsImage
+          src={imageUrl}
+          className="h-16 w-16 shrink-0 rounded-lg object-cover sm:h-18 sm:w-18 md:h-20 md:w-20"
+        />
+
+        <div className="min-w-0 flex-1">
+          <CartItemInfo
+            name={name}
+            details={details}
+            className="space-y-1"
+          />
+
+          <div className="mt-2 sm:hidden">
+            <CartItemDetailsPrice
+              value={price}
+              className="text-base font-semibold"
+            />
+          </div>
+        </div>
       </div>
 
-      <CartItemDetailsPrice value={price} />
+      <div className="hidden sm:block">
+        <CartItemDetailsPrice
+          value={price}
+          className="text-base md:text-lg font-semibold"
+        />
+      </div>
 
-      <div className="flex items-center gap-5 ml-20">
-        <CountButton onMinus={onMinus} onPlus={onPlus} value={quantity} />
+      <div
+        className={cn(
+          'mt-1 flex items-center justify-between',
+          'sm:mt-0 sm:justify-end sm:gap-4 md:gap-5 lg:ml-20'
+        )}
+      >
+        <CountButton
+          onMinus={onMinus}
+          onPlus={onPlus}
+          value={quantity}
+          className="h-9 sm:h-8 md:h-9"
+        />
 
-          <Trash2Icon
-            onClick={onDelete}
-            className="text-gray-400 cursor-pointer hover:text-gray-600"
-            size={16}
-          />
-       
+        <button
+          type="button"
+          onClick={onDelete}
+          aria-label="Remove item"
+          className={cn(
+            'group -mr-1 inline-flex items-center justify-center',
+            'h-10 w-10 sm:h-8 sm:w-8 md:h-9 md:w-9',
+            'rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-50'
+          )}
+        >
+          <Trash2Icon className="h-5 w-5 sm:h-4 sm:w-4 md:h-4 md:w-4 transition-colors" />
+        </button>
       </div>
     </div>
   );

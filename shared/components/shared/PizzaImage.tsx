@@ -11,25 +11,40 @@ export const PizzaImage: React.FC<Props> = ({ imageUrl, size, className }) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-center flex-1 relative w-full',
+        'relative flex w-full flex-1 items-center justify-center',
+        'min-h-[320px]',
+        {
+          'lg:min-h-[450px]': size === 20,
+          'lg:min-h-[550px]': size === 30,
+          'lg:min-h-[650px]': size === 40,
+        },
         className
       )}
     >
       <img
         src={imageUrl}
-        alt="Logo"
+        alt="Pizza"
         className={cn(
-          'relative left-2 top-2 transition-all z-10 duration-300',
+          'relative left-2 top-2 z-5 transition-all duration-300',
+          'w-[260px] h-[260px] sm:w-[310px] sm:h-[310px]',
           {
-            'w-[300px] h-[300px]': size === 20,
-            'w-[400px] h-[400px]': size === 30,
-            'w-[500px] h-[500px]': size === 40,
+            'lg:w-[350px] lg:h-[350px]': size === 20,
+            'lg:w-[450px] lg:h-[450px]': size === 30,
+            'lg:w-[550px] lg:h-[550px]': size === 40,
           }
         )}
       />
 
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed border-2 rounded-full border-gray-200 w-[450px] h-[450px]"></div>
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed border-2 rounded-full border-gray-100 w-[370px] h-[370px]"></div>
+      <div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+      hidden xl:block border-dashed border-2 rounded-full border-gray-200
+      w-[min(88vw,490px)] h-[min(88vw,490px)]"
+      ></div>
+      <div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+      hidden xl:block border-dashed border-2 rounded-full border-gray-100
+      w-[min(72vw,390px)] h-[min(72vw,390px)]"
+      ></div>
     </div>
   );
 };

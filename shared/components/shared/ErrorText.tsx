@@ -7,6 +7,6 @@ interface Props{
 
 export const ErrorText: React.FC<Props> = ({ text, className }) => {
     return (
-        <p className={cn('text-red-500 text-sm', className)}>{text}</p>
+        <p className={cn('text-red-500 text-xs md:text-sm', className)}>{text}</p>
     )
 }
