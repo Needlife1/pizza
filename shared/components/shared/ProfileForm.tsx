@@ -14,6 +14,8 @@ import { Title } from './Title';
 import { FormInput } from './form';
 import { Button } from '../ui';
 import { updateUserInfo } from '@/app/actions';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 interface Props {
   data: User;
@@ -42,6 +44,7 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
           icon: '✅',
         });
       } catch (error) {
+        console.error(error);
         return toast.error('Помилка при відновленні профілю.', {
           icon: '❌',
         });
@@ -55,16 +58,42 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
 
 
         return (
-          <Container className="my-5 flex flex-col items-center ">
-            <Title text={`Особисті дані: ${data.fullName}`} size="md" className="font-bold" />
+          <Container
+            className="
+      my-5 sm:my-8 md:my-10
+      flex flex-col items-center
+      px-4 sm:px-6 md:px-8      
+    "
+          >
+
+            <Link href="/" className="self-start mb-4 text-primary hover:text-primary/90 flex items-center gap-1 text-sm md:text-base">
+              <ArrowLeft  className='w-4 md:w-6'/> На головну
+            </Link>
+
+
+            <Title
+              text={`Особисті дані: ${data.fullName}`}
+              size="md"
+              className="
+        font-bold
+        text-lg sm:text-xl md:text-2xl
+        text-center sm:text-left
+      "
+            />
 
             <FormProvider {...form}>
               <form
-                className="flex flex-col gap-3 w-96 mt-10"
                 onSubmit={form.handleSubmit(onSubmit)}
+                className="
+          mt-6 sm:mt-8 md:mt-10
+          w-full
+          max-w-[440px] sm:max-w-[520px] md:max-w-[640px]
+          flex flex-col gap-3 sm:gap-4 md:gap-5
+        "
               >
                 <FormInput name="email" label="E-mail" required />
-                <FormInput name="fullName" label="Повне імя" required />
+                <FormInput name="fullName" label="Повне імʼя" required />
+
                 <FormInput
                   type="password"
                   name="password"
@@ -79,19 +108,28 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
                 />
 
                 <Button
-                  disabled={form.formState.isSubmitting}
-                  className="text-base mt-10"
                   type="submit"
+                  disabled={form.formState.isSubmitting}
+                  className="
+            mt-6 sm:mt-8
+            w-full                
+            text-sm sm:text-base 
+            py-5
+          "
                 >
                   Зберегти
                 </Button>
 
                 <Button
-                  onClick={onClickSingOut}
-                  variant="secondary"
-                  disabled={form.formState.isSubmitting}
-                  className="text-base"
                   type="button"
+                  variant="secondary"
+                  onClick={onClickSingOut}
+                  disabled={form.formState.isSubmitting}
+                  className="
+            w-full
+            text-sm sm:text-base
+            py-5
+          "
                 >
                   Вийти
                 </Button>

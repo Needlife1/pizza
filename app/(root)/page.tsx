@@ -1,6 +1,5 @@
 import {
   Container,
-  // Title,
   TopBar,
   Filter,
   ProductsGroupList,
@@ -20,9 +19,6 @@ export default async function Home({
 
   return (
     <>
-      {/* <Container className="mt-10">
-        <Title text="Усі страви" size="lg" className="font-extrabold" />
-      </Container> */}
       <TopBar
         className="hidden sm:block"
         categories={categories.filter(

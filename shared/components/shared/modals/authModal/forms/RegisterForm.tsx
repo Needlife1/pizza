@@ -8,13 +8,14 @@ import { Button } from '@/shared/components/ui';
 import toast from 'react-hot-toast';
 import { registerUser } from '@/app/actions';
 import { DialogTitle } from '@radix-ui/react-dialog';
+import { signIn } from 'next-auth/react'; 
 
 interface Props {
   onClose?: VoidFunction;
   onClickLogin?: VoidFunction;
 }
 
-export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
+export const RegisterForm: React.FC<Props> = ({ onClose }) => {
   const form = useForm<TFormRegisterValues>({
     resolver: zodResolver(formRegisterSchema),
     defaultValues: {
@@ -33,8 +34,15 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
         password: data.password,
       });
 
-      toast.error('Реєстрація успішна! Підтвердіть свою пошту.', {
+      toast.success('Реєстрація успішна! Підтвердіть свою пошту.', {
         icon: '✅',
+      });
+
+      await signIn('credentials', {
+        redirect: true, 
+        email: data.email,
+        password: data.password,
+        callbackUrl: '/', 
       });
 
       onClose?.();

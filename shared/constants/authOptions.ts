@@ -45,7 +45,11 @@ export const authOptions: NextAuthOptions = {
           findUser.password
         );
 
-        if (!isPasswordValid || !findUser.verified) return null;
+        if (!isPasswordValid) return null;
+
+        // if (!findUser.verified) {
+        //   throw new Error('Email is not verified');
+        // }
 
         return {
           id: String(findUser.id),

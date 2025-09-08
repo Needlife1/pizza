@@ -19,7 +19,7 @@ export default function HomeLayout({
       <Suspense>
         <Header />
       </Suspense>
-      <div className="px-4 sm:px-6 lg:px-8 xl:px-10 py-25 sm:py-8 lg:py-10">
+      <div className="px-4 sm:px-6 lg:px-8 xl:px-10 pt-25 pb-5 sm:pb-25 sm:py-8 lg:py-10">
         {children}
         {modal}
       </div>

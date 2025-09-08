@@ -92,11 +92,15 @@ export const MobileMenu = ({
         </div>
 
         <div className="mt-auto grid gap-2">
+
           <ProfileButton
             className="w-full"
             onClickSignIn={() => {
               handleRequestClose();
               onOpenAuth();
+            }}
+            onClickProfile={() => {
+              handleRequestClose(); 
             }}
           />
         </div>

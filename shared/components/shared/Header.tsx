@@ -9,7 +9,7 @@ import { SearchInput } from './SearchInput';
 import { CartButton } from './CartButton';
 import { ProfileButton } from './ProfileButton';
 import { AuthModal } from './modals';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui';
@@ -32,6 +32,8 @@ export const Header: React.FC<Props> = ({
   const [openAuthModal, setOpenAuthModal] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
   const router = useRouter();
+  const checkout = usePathname().includes('checkout');
+  
 
   const searchParams = useSearchParams();
 
@@ -88,7 +90,7 @@ export const Header: React.FC<Props> = ({
           </div>
         )}
 
-        <div className="hidden sm:flex items-center gap-3">
+        <div className={checkout ? 'hidden' : 'flex items-center gap-3'}>
           <AuthModal
             open={openAuthModal}
             onClose={() => setOpenAuthModal(false)}

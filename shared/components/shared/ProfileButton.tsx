@@ -4,11 +4,16 @@ import { CircleUser, User } from "lucide-react";
 import Link from "next/link";
 
 interface Props {
-    onClickSignIn?: () => void;
-    className?: string;
+  onClickSignIn?: () => void;
+  onClickProfile?: () => void;
+  className?: string;
 }
 
-export const ProfileButton: React.FC<Props> = ({ onClickSignIn, className }) => {
+export const ProfileButton: React.FC<Props> = ({
+  onClickSignIn,
+  onClickProfile,
+  className,
+}) => {
   const { data: session } = useSession();
 
   return (
@@ -23,8 +28,12 @@ export const ProfileButton: React.FC<Props> = ({ onClickSignIn, className }) => 
           Увійти
         </Button>
       ) : (
-        <Link href="/profile">
-          <Button variant="secondary" className="flex items-center gap-2">
+        <Link href="/profile" >
+          <Button
+            variant="secondary"
+              className="flex items-center gap-2 w-full"
+              onClick={onClickProfile}
+          >
             <CircleUser size={18} />
             Профіль
           </Button>

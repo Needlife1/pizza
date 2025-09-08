@@ -19,6 +19,8 @@ import toast from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { Api } from '@/shared/services/api-client';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
@@ -87,6 +89,13 @@ export default function CheckoutPage() {
   
   return (
     <Container className="mt-10">
+      <Link
+        href="/"
+        className="self-start mb-4 text-primary hover:text-primary/90 flex items-center gap-1 text-sm md:text-base"
+      >
+        <ArrowLeft className="w-4 md:w-6" /> На головну
+      </Link>
+
       <Title
         text="Оформити замовлення"
         className="font-extrabold mb-8 text-4xl"
