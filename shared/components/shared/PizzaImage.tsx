@@ -30,7 +30,7 @@ export const PizzaImage: React.FC<Props> = ({ imageUrl, size, className }) => {
           {
             'lg:w-[350px] lg:h-[350px]': size === 20,
             'lg:w-[450px] lg:h-[450px]': size === 30,
-            'lg:w-[550px] lg:h-[550px]': size === 40,
+            'lg:w-[500px] lg:h-[500px]': size === 40,
           }
         )}
       />
@@ -38,7 +38,7 @@ export const PizzaImage: React.FC<Props> = ({ imageUrl, size, className }) => {
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
       hidden xl:block border-dashed border-2 rounded-full border-gray-200
-      w-[min(88vw,490px)] h-[min(88vw,490px)]"
+      w-[min(88vw,45px)] h-[min(88vw,450px)]"
       ></div>
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
